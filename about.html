@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragoomu | About Us</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/script.js" defer></script>
+    <link rel="icon" href="assets/IMG/Ragoomu [Logo].png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><img class="img-logo" src="assets/IMG/Ragoomu [Logo].png" alt="Logo">
+            <img class="img-namelogo" src="assets/IMG/Ragoomu [Name Logo].png" alt="Namelogo"></h1>
+        <nav id="main-nav">
+            <div class="topnav"><ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul></div>
+        </nav>
+        <form id="search-form" onsubmit="return handleSearch(event)">
+            <input type="text" id="search-box" placeholder="What are you looking for?">
+            <button>Search</button>
+        </form>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="order">
+                <img src="assets/IMG/Search_Icon.png">
+                <span class="quantity">0</span>
+            </div>
+
+        </div>
+    </header>
+    <main>
+    <section class="about-section">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <div class="Aboutus">
+                <p>
+                    Derived from a play on the Hiligaynon word “ragomo,” meaning to crunch, be crisp, or emit a crunching sound, Ragoomu opened its doors to the public on October 14, 2022. Our aim is to capture the Ilonggo taste through Western and Asian-inspired crispy chicken dishes.<br><br>
+                    Conceptualized by high school friends Ely Vasig, Jesse Lagon, and Marc Guillergan, along with Val Vasig and Hannah Vasig-Tan Yau, Ragoomu was created to be a place for quality bonding, joy, and love among families and friends.
+                </p>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="assets/IMG/Ragoomu_About.png" alt="About Ragoomu">
+        </div>
+    </section>
+
+    <div class="cart">
+        <h1>Cart</h1>
+        <ul class="listCart"></ul>
+        <div class="checkOut">
+            <div class="closeOrder">Close</div>
+            <button class="checkoutOrder" type="button">Checkout</button>
+        </div>
+    </div>
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Order Status</h2>
+            <p>Your order is being prepared!</p>
+            <button class="closeModalBtn" type="button">Close</button>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2025 Ragoomu. All rights reserved.</p>
+</footer>
+    <script>
+  const authBtn = document.getElementById('authBtn');
+  const authModal = document.getElementById('authModal');
+  const closeAuthModal = document.getElementById('closeAuthModal');
+  const loginForm = document.getElementById('loginForm');
+
+  // Show modal when Log In is clicked
+  authBtn.onclick = function() {
+      if (authBtn.textContent === "Log In") {
+          authModal.style.display = 'block';
+      } else {
+          // If already logged in, this acts as Logout
+          authBtn.textContent = "Log In";
+      }
+  };
+
+  // Hide modal when close is clicked
+  closeAuthModal.onclick = function() {
+      authModal.style.display = 'none';
+  };
+
+  // Hide modal when clicking outside
+  window.onclick = function(event) {
+      if (event.target == authModal) {
+          authModal.style.display = 'none';
+      }
+  };
+
+  // On login form submit
+  loginForm.onsubmit = function(e) {
+      e.preventDefault();
+      authModal.style.display = 'none';
+      authBtn.textContent = "Logout";
+      loginForm.reset();
+  };
+</script>
+</body>
+</html>

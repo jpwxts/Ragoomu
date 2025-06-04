@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragoomu | Branches</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/script.js" defer></script>
+    <link rel="icon" href="assets/IMG/Ragoomu [Logo].png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><img class="img-logo" src="assets/IMG/Ragoomu [Logo].png" alt="Logo">
+            <img class="img-namelogo" src="assets/IMG/Ragoomu [Name Logo].png" alt="Namelogo"></h1>
+        <nav id="main-nav">
+            <div class="topnav"><ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul></div>
+        </nav>
+        <form id="search-form" onsubmit="return handleSearch(event)">
+            <input type="text" id="search-box" placeholder="What are you looking for?">
+            <button type="submit">Search</button>
+        </form>
+            <div class="order">
+            <img src="assets/IMG/Search_Icon.png">
+            <span class="quantity">0</span>
+            </div>
+    </header>
+    <main>
+        <h2>Find a nearby Ragoomu today! We might be closer than you think!</h2>
+        <div class="Branchbody">
+            <div class="row">
+    <div class="column">
+        <img src="assets/IMG/luna_st.jpg" alt="">
+        <div class="branch-label">Ragoomu West-Nasyo</div>
+    </div>
+    <div class="column">
+        <img src="assets/IMG/dungon.jpg" alt="">
+        <div class="branch-label">Ragoomu Dungon</div>
+    </div>
+    <div class="column">
+        <img src="assets/IMG/ledesco.jpg" alt="">
+        <div class="branch-label">Ragoomu Ledesco</div>
+    </div>
+</div>
+        </div>
+
+        <div class="cart">
+            <h1>Cart</h1>
+            <ul class="listCart"></ul>
+            <div class="checkOut">
+            <div class="closeOrder">Close</div>
+         <button class="checkoutOrder" type="button">Checkout</button>
+</div>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ragoomu. All rights reserved.</p>
+    </footer>
+</body>
+</html>

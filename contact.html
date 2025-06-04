@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragoomu | Contact Us</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/script.js" defer></script>
+    <link rel="icon" href="assets/IMG/Ragoomu [Logo].png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><img class="img-logo" src="assets/IMG/Ragoomu [Logo].png" alt="Logo">
+            <img class="img-namelogo" src="assets/IMG/Ragoomu [Name Logo].png" alt="Namelogo"></h1>
+        <nav id="main-nav">
+            <div class="topnav"><ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="branches.html">Branches</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul></div>
+        </nav>
+        <form id="search-form" onsubmit="return handleSearch(event)">
+            <input type="text" id="search-box" placeholder="What are you looking for?">
+            <button type="submit">Search</button>
+        </form>
+            <div class="order">
+            <img src="assets/IMG/Search_Icon.png">
+            <span class="quantity">0</span>
+            </div>
+    </header>
+    <main>
+        <h2>Want to share something to Ragoomu? Message us and we'll get back to you soon as we can!</h2>
+        <div class="contact-actions" style="display: flex; flex-direction: column; align-items: center; gap: 1.2rem; margin-top: 2rem;">
+            <button id="openContactModalForm" class="checkoutOrder contact-btn-large" type="button">Contact Us</button>
+            <div class="QRcode">
+                <img src="assets/IMG/RagoomuQR.png" alt="QRcode" class="qr-img-small">
+            </div>
+        </div>
+
+ <div class="cart">
+            <h1>Cart</h1>
+            <ul class="listCart"></ul>
+            <div class="checkOut">
+            <div class="closeOrder">Close</div>
+         <button class="checkoutOrder" type="button">Checkout</button>
+</div>
+    </div>
+  <div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Order Status</h2>
+    <p>Your order is being prepared!</p>
+    <button class="closeModalBtn" type="button">Close</button>
+  </div>
+</div>
+    </main>
+    <div id="contactModalForm" class="modal contact-modal">
+  <div class="modal-content contact-modal-content" style="max-width:400px;">
+    <span class="close-modal" id="closeContactModalForm">&times;</span>
+    <h2>Contact Us</h2>
+    <form id="contact-form-modal-form">
+      <label for="modal-name-form">Name:</label>
+      <input type="text" id="modal-name-form" name="name" required style="width:90%;margin-bottom:10px;">
+      <label for="modal-email-form">Email:</label>
+      <input type="email" id="modal-email-form" name="email" required style="width:90%;margin-bottom:10px;">
+      <label for="modal-message-form">Message:</label>
+      <textarea id="modal-message-form" name="message" rows="4" required style="width:90%;margin-bottom:10px;"></textarea>
+      <button type="submit" class="checkoutOrder">Send Message</button>
+    </form>
+  </div>
+</div>
+    <footer>
+        <p>&copy; 2025 Ragoomu. All rights reserved.</p>
+    </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const openBtn = document.getElementById('openContactModalForm');
+    const modal = document.getElementById('contactModalForm');
+    const closeBtn = document.getElementById('closeContactModalForm');
+    const form = document.getElementById('contact-form-modal-form');
+
+    if(openBtn && modal) {
+        openBtn.onclick = () => { modal.style.display = 'block'; };
+    }
+    if(closeBtn && modal) {
+        closeBtn.onclick = () => { modal.style.display = 'none'; };
+    }
+    window.onclick = (event) => {
+        if(event.target === modal) modal.style.display = 'none';
+    };
+
+    if(form && modal) {
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            alert('Thank you for your message!');
+            modal.style.display = 'none';
+            form.reset();
+        };
+    }
+});
+</script>
+</body>
+</html>

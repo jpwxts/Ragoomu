@@ -1,0 +1,124 @@
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8AA06;
+}
+
+
+
+header {
+    background-color: rgb(37, 37, 37);
+    color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: proxima-nova, sans-serif;
+}
+
+header h1 {
+    margin: 20px;
+
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    font-size: 80px;
+    font-family: Cherry Bomb One;
+    -webkit-text-stroke-color: #333;
+    text-shadow: 4px 4px 1px white;
+    letter-spacing: 2px;
+
+}
+
+/*NavBar*/
+.topnav {
+    float: left;
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    left : 50px;
+    position: relative;
+}
+.topnav :hover{
+        stroke-opacity: inherit;
+        color: black;
+
+}
+/*Main Logo Top left [properties]*/
+.img-logo {
+    width: 100px;
+    
+}
+.img-namelogo {
+    width : 200px;
+    position : absolute;
+    top : 60px;
+    left : 130px;
+    size: 30%;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 80;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#search-form {
+    display: flex;
+}
+
+#search-box {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+#search-form button {
+    padding: 0.5rem;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+/*Search Button [Properties]*/
+.img-search {
+    width: 50px;
+}
+
+/*main vid*/
+div.homevideo p{
+    position: center;
+  right: 0;
+  bottom: 0;
+    max-width: 100%;
+  min-width: 300px;
+  height: -webkit-calc(50% - 18px);
+  height: calc(50% - 18px); 
+
+}
+
+.Products {
+    position: relative;
+    top: 10px; 
+    max-width: 100%;
+    align-self: stretch;
+    background-color: #f3f3f3;
+
+}

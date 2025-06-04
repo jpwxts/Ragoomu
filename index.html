@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragoomu | Local Comfort Food Restaurant</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <script src="assets/JS/script.js" defer></script>
+    <link rel="icon" href="assets/IMG/Ragoomu [Logo].png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>
+            <div>
+                <img class="img-logo" src="assets/IMG/Ragoomu [Logo].png" alt="Logo">
+                <img class="img-namelogo" src="assets/IMG/Ragoomu [Name Logo].png" alt="Namelogo">
+            </div>
+        </h1>
+        <nav id="main-nav">
+            <div class="topnav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="branches.html">Branches</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <form id="search-form" onsubmit="return handleSearch(event)">
+            <input type="text" id="search-box" placeholder="What are you looking for?">
+            <button>Search</button>
+        </form>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="order">
+                <img src="assets/IMG/Search_Icon.png">
+                <span class="quantity">0</span>
+            </div>
+            <button id="authBtn" class="auth-btn" type="button">Log In</button>
+        </div>
+    </header>
+    <main>
+    <section class="welcome-section">
+        <h2 class="welcome-title">Welcome to Ragoomu!</h2>
+        <p class="welcome-desc">
+            Experience the comfort and joy that every Ilonggo will feel while enjoying the relaxing ambiance and sumptuous food at Ragoomu.
+        </p>
+        <div class="homevideo">
+            <video autoplay muted loop id="home-video" src="assets/IMG/Ragoomu [Home Page].mp4" type="video/mp4"></video>
+        </div>
+    </section>
+</main>
+    <footer>
+        <p>&copy; 2025 Ragoomu. All rights reserved.</p>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal auth-modal">
+      <div class="modal-content auth-modal-content" style="max-width:370px;">
+        <span class="close-modal" id="closeAuthModal">&times;</span>
+        <h2 style="margin-bottom: 1rem;">Log In</h2>
+        <form id="loginForm" style="margin-bottom: 1.5rem;">
+          <input type="email" name="email" placeholder="Email" required style="width:90%;margin-bottom:10px;padding:0.6rem;border-radius:7px;border:1px solid #a13d1f;">
+          <input type="password" name="password" placeholder="Password" required style="width:90%;margin-bottom:10px;padding:0.6rem;border-radius:7px;border:1px solid #a13d1f;">
+          <button type="submit" class="checkoutOrder" style="width: 80%; margin-bottom: 0.7rem;">Log In</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+  const authBtn = document.getElementById('authBtn');
+  const authModal = document.getElementById('authModal');
+  const closeAuthModal = document.getElementById('closeAuthModal');
+  const loginForm = document.getElementById('loginForm');
+
+  // Show modal when Log In is clicked
+  authBtn.onclick = function() {
+      if (authBtn.textContent === "Log In") {
+          authModal.style.display = 'block';
+      } else {
+          // If already logged in, this acts as Logout
+          authBtn.textContent = "Log In";
+      }
+  };
+
+  // Hide modal when close is clicked
+  closeAuthModal.onclick = function() {
+      authModal.style.display = 'none';
+  };
+
+  // Hide modal when clicking outside
+  window.onclick = function(event) {
+      if (event.target == authModal) {
+          authModal.style.display = 'none';
+      }
+  };
+
+  // On login form submit
+  loginForm.onsubmit = function(e) {
+      e.preventDefault();
+      authModal.style.display = 'none';
+      authBtn.textContent = "Logout";
+      loginForm.reset();
+  };
+</script>
+</body>
+</html>
